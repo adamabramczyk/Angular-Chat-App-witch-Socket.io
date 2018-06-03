@@ -1,0 +1,69 @@
+.chat {
+  width: 84%;
+  height: 94%;
+  color: white;
+  background-color: #eee;
+  font-family: Lato;
+  max-height: calc(100vh - 10px);
+  max-width: calc(100vw - 10px);
+  box-shadow: 0 0 5px 0.1px #005f63;
+
+  position: fixed;
+  bottom: 0;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.chat .header {
+  background-color: #00363a;
+  color: white;
+  padding: 8px;
+  position: relative;
+}
+
+.chat .header .minimize {
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  border: 1px solid #eee;
+  text-align: center;
+  cursor: pointer;
+}
+
+.chat .messages {
+  padding: 10px;
+  height: calc(100% - 35px - 50px);
+  overflow: scroll;
+}
+
+.chat .footer {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+
+}
+
+.chat .footer textarea {
+  resize: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+  color: black;
+}
+
+.chat .footer button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.chat.minimized {
+  height: 35px;
+  min-height: 0;
+}
+
+.chat.minimized .messages, .chat.minimized .footer {
+  display: none;
+}

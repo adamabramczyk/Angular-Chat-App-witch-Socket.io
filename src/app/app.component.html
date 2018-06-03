@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="chat" [class.minimized]="isMinimized">
+
+  <div class="header">Smalltalk
+    <div class="minimize" (click)="toggle()">
+      <span *ngIf="isMinimized">max</span>
+      <span *ngIf="!isMinimized">min</span>
+    </div>
+  </div>
+
+
+  <div #container class="messages">
+    <app-message *ngFor="let message of messages; last as isLast" 
+                 [isLast]="isLast"
+                 [authorId]="authorId"
+                 [message]="message">
+    </app-message>
+  </div>
+
+  
+  <div class="footer">
+    <textarea #texarea (keydown.enter)="sendMessage()"></textarea>
+    <button mat-raised-button (click)="sendMessage()">Send</button>
+  </div>
+
+
+</div>
